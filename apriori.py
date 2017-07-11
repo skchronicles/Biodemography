@@ -9,7 +9,7 @@
 def apriori(q, q_pvalues):
     """ This function implements a modified version of the apriori algorithm which can be used for speeding up
     an otherwise exhaustive high-performance computing problem. The apriori algorithm is commonly used in mining
-    frequent itemsets for boolean association rules. It uses a monotonic "bottom up" approach, where frequent subsets
+    frequent itemsets for boolean association rules. It uses an anti-monotonic "bottom up" approach, where frequent subsets
     are extended one item at a time."""
 
     insignificant = []
