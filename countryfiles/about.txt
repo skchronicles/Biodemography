@@ -1,1 +1,0 @@
-# Mortality data files for each country before pre-processing or parsing by biological sex.
