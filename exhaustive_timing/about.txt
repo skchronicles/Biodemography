@@ -1,0 +1,2 @@
+# Information in this directory is related to the timing of exhaustive combinatorics program ('combinations.py')
+# and its generative statistics. 
