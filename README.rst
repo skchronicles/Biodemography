@@ -5,7 +5,7 @@
 # Version 1.2.0
 ##########################################################################################################
 
-Biodemography | High-Performance Computing | Data Mining | Combinatorial optimization | WHO
+Biodemography | Apriori Algorithm | Data Mining | Combinatorial optimization | WHO
 
 Usage Requirements:   
 --- Data files should be in csv format      
@@ -17,3 +17,7 @@ A modified version of the apriori algorithm is implemented to find the common ca
 across the globe in a set of 35 icd codes. The theory being that once all of the conserved possible 
 combinations leading to morbidity across the globe are determined, one may tentatively identify whether 
 the underlying etiologies of these diseases or groups of diseases are genetic or environmental.
+
+Understanding Mortality and Aging
+Center for the Study of Biological Complexity & Department of Computer Science
+Labs of Dr. Tarynn Witten and Dr. Alberto
