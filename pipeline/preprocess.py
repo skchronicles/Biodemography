@@ -1,5 +1,5 @@
 #####################################################
-# Skyler Kuhn & Hasan Alkhairo
+# Skyler Kuhn
 # Biodemography Data pre-processing
 # Center for the Study of Biological Complexity
 # Version 1.2
