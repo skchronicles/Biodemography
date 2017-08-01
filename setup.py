@@ -1,7 +1,6 @@
-"""
-Setup module for the Biodemography Project
+"""A setuptools based setup module for the Biodemography Project
 
-For more information please see:
+See:
 https://packaging.python.org/en/latest/distributing.html
 https://github.com/pypa/sampleproject
 """
@@ -14,7 +13,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.rst')) as f:
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
@@ -42,7 +41,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Beta',
 
         # Target Audience
         'Intended Audience :: Developers, Researchers',
@@ -54,8 +53,6 @@ setup(
         # Supported Versions of Python
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
-        
-        'Intended Audience :: Developers',
     ],
 
     # What does your project relate to?
@@ -88,21 +85,17 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        #'sample': ['package_data.dat'],
+        'biodemography': ['mdlt3160_2011.csv', 'mdlt4050_2006.csv', 'mdlt4260_2010.csv',
+                          'mdlt4300_2010.csv', 'mdlt4335_2005.csv', 'Sex1_mdlt3160_2011.csv',
+                          'Sex1_mdlt4050_2006.csv', 'Sex1_mdlt4260_2010.csv', 'Sex1_mdlt4300_2010.csv',
+                          'Sex1_mdlt4335_2005.csv', 'Sex2_mdlt3160_2011.csv', 'Sex2_mdlt4050_2006.csv',
+                          'Sex2_mdlt4260_2010.csv', 'Sex2_mdlt4300_2010.csv', 'Sex2_mdlt4335_2005.csv']
     },
-
-    # Although 'package_data' is the preferred approach, in some case you may
-    # need to place data files outside of your packages. See:
-    # http://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files # noqa
-    # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
-    #data_files=[('my_data', ['data/data_file'])],
 
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
-        #'console_scripts': [
-        #    'pipeline=sample:main',
-        #],
+        'console_scripts': ['biodemography=biodemography:main'],
     },
 )
