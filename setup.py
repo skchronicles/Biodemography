@@ -42,7 +42,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Beta',
+        'Development Status :: 4 - Beta',
 
         # Target Audience
         'Intended Audience :: Developers, Researchers',
@@ -54,6 +54,8 @@ setup(
         # Supported Versions of Python
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
+        
+        'Intended Audience :: Developers',
     ],
 
     # What does your project relate to?
