@@ -1,9 +1,9 @@
-########################################################################################################################
+#########################################################################################################
 # Skyler Kuhn
 # Center for the Study of Biological Complexity
 # Biodemography Project: Apriori Aligorithm
 # Version 1.2.0
-########################################################################################################################
+##########################################################################################################
 
 Biodemography | High-Performance Computing | Data Mining | Combinatorial optimization | WHO
 
@@ -14,7 +14,7 @@ that once all of the conserved possible combinations leading to morbidity across
 tentatively identify whether the underlying etiologies of these diseases or groups of diseases are genetic or
 environmental.
 
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 MIT License
 Copyright <2017> <Skyler Kuhn>
 
@@ -35,4 +35,4 @@ Understanding Mortality and Aging
 Center for the Study of Biological Complexity & Department of Computer Science
 Labs of Dr. Tarynn Witten and Dr. Alberto
 
-------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
