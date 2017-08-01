@@ -40,5 +40,4 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Understanding Mortality and Aging
 Center for the Study of Biological Complexity & Department of Computer Science
 Labs of Dr. Tarynn Witten and Dr. Alberto
-
 -----------------------------------------------------------------------------------------------------------
