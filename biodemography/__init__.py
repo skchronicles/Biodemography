@@ -5,14 +5,15 @@
 # Version 1.2
 #####################################################
 
-import pipeline
+#import pipeline
 
 
 
 
 def main():
     """Entry point for the project's pipeline"""
-    pipeline.main()
+    #pipeline.main()
+    pass
 
 
 if __name__ == "__main__":
