@@ -28,7 +28,9 @@ def clean_directory():
     print("Done!\n")
 
 def parse_file(filename):
-    """This function takes a filename as a argument and creates new files according for each biological sex."""
+    """This function takes a filename as a argument and creates
+    new files according for each biological sex."""
+    
     print(filename)
     fh = open(filename)
     header = next(fh)
