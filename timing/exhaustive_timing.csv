@@ -1,4 +1,4 @@
-Item_Set_Size,GenerativeTimingSeconds,NumberofUniqueCombinations 
+Itemset_Cardinality,GenerativeTiming(sec),NumberofUniqueCombinations 
 0,0.0,0
 1,0.04,35
 2,0.68,595
