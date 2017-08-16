@@ -13,7 +13,6 @@ from os import path
 import os, re, preprocess, time
 
 
-
 def find_current_dir():
     here = os.path.abspath(os.path.dirname(__file__))
     current_dir = here.split("/")[-1]
@@ -177,7 +176,7 @@ def apriori_v3(q, insig, sex_file_dict, countries_list, age):
 
         chisq, pvalue = chisquare(obs_freqs)
 
-        if pvalue >= 0.05:
+        if pvalue >= 0.01:
             significant.append(element)
 
             for i in range(int(element[-1])+1,36):
@@ -212,8 +211,7 @@ def bottom_up_trim(q, sex_file_dict, countries_list, age):
         # Calculate chi-square test here
         if 0 not in obs_freqs:
             chisq, pvalue = chisquare(obs_freqs)
-            if pvalue <= 0.05:
-                # print("Insignificant: ", pvalue)
+            if pvalue <= 0.01:
                 # print("Removing {} from the Queue".format(num))
                 insig.append(num)
             else:
@@ -377,8 +375,9 @@ def main():
     # Creating a list of all countries
     sex1_countries_list = sex1_file_dict.keys()
     sex2_countries_list = sex2_file_dict.keys()
+    sex1_file_dict.values()
 
-    # Creating an age support dictionary. This is used to make sure the mimimum support count for each age is met.
+    # Creating an age support dictionary. This is used to make sure the minimum support count for each age is met.
     age_support_dict = {}
     for key, value in sex1_age_icd_support.items():
         try:
@@ -390,11 +389,14 @@ def main():
     print("Age Support Dict: ", age_support_dict)
 
     signifOUTFH = open("results.tsv", "w")
+    signifOUTFH.write("Sex\tAge\tSignificant_Combination\n")
 
+    counter1 = 0
     print("Countries Evaluated: {}\n".format(sex1_countries_list))
     for country_age_dict in sex1_file_dict.values():
+        counter1 += 1
         for age, icds_dict in country_age_dict.items():
-            if age in age_support_dict:  # meaning this age is in all six files
+            if age in age_support_dict and counter1 <= 1:  # meaning this age is in all six files
 
                 qu = [str(i) for i in range(1, 36, 1)]
                 #icd_count = round(float(sex1_file_dict[country][age][i]) * 1000000)
@@ -403,14 +405,16 @@ def main():
                 """!!!!!!!!!!!!! Tie in APRIORI ALGORITHM here :D !!!!!!!!!!!!!"""
                 significant_combinations = apriori_v3(qu, insig, sex1_file_dict, sex1_countries_list, age)
                 if len(significant_combinations) > 0:
-                    signifOUTFH.write("{}\t{}\t{}\n".format("Sex1", age, significant_combinations))
+                    signifOUTFH.write("{}\t{}\t{}\n".format("1", age, significant_combinations))
                 print("Apriori Significant Combs", significant_combinations)
                 print("##################################\nSuccess!")
 
     print("Countries Evaluated: {}\n".format(sex2_countries_list))
+    counter2 = 0
     for country_age_dict in sex2_file_dict.values():
+        counter2 += 1
         for age, icds_dict in country_age_dict.items():
-            if age in age_support_dict:  # meaning this age is in all six files
+            if age in age_support_dict and counter2 <= 1:  # meaning this age is in all six files
 
                 qu = [str(i) for i in
                       range(1, 36, 1)]
@@ -419,7 +423,7 @@ def main():
                 """!!!!!!!!!!!!! Tie in APRIORI ALGORITHM here :D !!!!!!!!!!!!!"""
                 significant_combinations = apriori_v3(qu, insig, sex2_file_dict, sex2_countries_list, age)
                 if len(significant_combinations) > 0:
-                    signifOUTFH.write("{}\t{}\t{}\n".format("Sex2", age, significant_combinations))
+                    signifOUTFH.write("{}\t{}\t{}\n".format("2", age, significant_combinations))
                 print("Apriori Significant Combs", significant_combinations)
                 print("##################################\nSuccess!")
     signifOUTFH.close()
@@ -427,3 +431,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
